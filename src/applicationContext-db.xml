@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     ">
+
+    <context:component-scan base-package="com.test"/>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+          p:defaultEncoding="UTF-8"/>
+    <!--fff -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+        <property name="username">
+            <value>root</value>
+        </property>
+        <property name="password" value="suhuijuan."/>
+
+        <property name="filters">
+            <value>stat</value>
+        </property>
+
+        <property name="maxActive">
+            <value>20</value>
+        </property>
+        <property name="initialSize">
+            <value>1</value>
+        </property>
+        <property name="maxWait">
+            <value>60000</value>
+        </property>
+        <property name="minIdle">
+            <value>1</value>
+        </property>
+
+        <property name="timeBetweenEvictionRunsMillis">
+            <value>60000</value>
+        </property>
+        <property name="minEvictableIdleTimeMillis">
+            <value>300000</value>
+        </property>
+
+        <property name="validationQuery">
+            <value>SELECT 'x'</value>
+        </property>
+        <property name="testWhileIdle">
+            <value>true</value>
+        </property>
+        <property name="testOnBorrow">
+            <value>false</value>
+        </property>
+        <property name="testOnReturn">
+            <value>false</value>
+        </property>
+
+        <property name="poolPreparedStatements">
+            <value>true</value>
+        </property>
+        <property name="maxOpenPreparedStatements">
+            <value>20</value>
+        </property>
+    </bean>
+
+
+    <!-- 工况数据源配置 -->
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <!-- 通过扫描的模式，扫描com.test.mapper.mysqlmapper目录下，所有的mapper用的都是MySqlDataSource数据源 -->
+    <!--使用wdapp数据库配置  -->
+    <bean class="org.mybatis.spring.annotation.MapperScannerPostProcessor">
+        <!-- 本地环境 -->
+        <property name="basePackage" value="com.test.mapper"/>
+        <!-- 生产环境 -->
+        <!--          <property name="basePackage" value="com.testpper.mysqlmapper"/>  -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+
+</beans>

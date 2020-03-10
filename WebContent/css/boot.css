@@ -1,0 +1,32 @@
+#boot .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    border: 1px solid black;
+}
+
+/*input���Ҳ�ͼ��  */
+.true:before {
+    vertical-align: middle;
+    content: url('../img/boot/true_green.png');
+}
+
+/*  */
+body {
+    counter-reset: section;
+}
+
+h5 {
+    counter-reset: subsection;
+}
+
+/* ���� �� 1��2��3 */
+h5:before {
+    counter-increment: section;
+    content: "Section " counter(section) ". ";
+}
+
+/* ���� �� 1.1��1.2��1.3 */
+h6:before {
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) " ";
+}
+
+/*  */

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <script type="text/javascript" src="./../plug-in/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./../plug-in/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./../plug-in/jquery-easyui-1.5.2/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="./../plug-in/jquery-easyui-1.5.2/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="./../js/common.js"></script>
+
+    <link rel="stylesheet" href="./../plug-in/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./../plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./../plug-in/jquery-easyui-1.5.2/themes/metro/easyui.css"/>
+    <link rel="stylesheet" href="./../css/common.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- 表格分页 -->
+        <div class="col-md-12 hei-50">
+            <table id="table2" title="aaa" class="easyui-datagrid wid-50"
+                   data-options="url:'./../userTest/getTableData.do?time=2017-06-23&pageno=1&pagesize=5,fitcomulns:true,singleSelect:true">
+                <thead>
+                <th data-options="field:'name',width:100">name</th>
+                <th data-options="field:'type',width:100">type</th>
+                <th data-options="field:'number',width:100">number</th>
+                <th data-options="field:'time',width:100">number</th>
+                <th data-options="field:'_a',width:100">
+                    <button onclick="cz(this)">操作</button>
+                </th>
+                </thead>
+            </table>
+            <div id="pp2" class="wid-100"></div>
+        </div>
+        <!-- 表格分页 -->
+        <div class="col-md-12 hei-50">
+            <table id="table1" class="wid-50">
+
+            </table>
+            <div id="pp" class="wid-100"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var currentPageIndex = 1;  //table默认第一页
+    var currentPageSize = 5;   //table显示数据的最大数量
+
+    $(document).ready(function () {
+        //table1();
+    })
+
+    //表格生成
+    function table1() {
+        var url = "./../userTest/getTableData.do?time=2017-06-23&pageno=" + currentPageIndex + "&pagesize=" + currentPageSize;
+        var data = ajax(url);
+        $("#table1").datagrid({
+            data: data.data,
+            fitColumns: true,
+            singleSelect: true,  //单选
+            overFlow: 'auto',
+            columns: [[
+                {
+                    field: 'name', title: function () {
+                        return '<label>合并两列</label>';
+                    }, align: 'center', width: 100, colspan: 2
+                },
+                {
+                    field: 'type', title: function () {
+                        return '<label>合并三列</label>';
+                    }, align: 'center', width: 100, colspan: 3
+                }
+            ], [
+                {
+                    field: 'name', title: function () {
+                        return '<label>名称</label>';
+                    }, align: 'center', width: 100
+                },
+                {
+                    field: 'type', title: function () {
+                        return '<label>类型</label>';
+                    }, align: 'center', width: 100
+                },
+                {
+                    field: 'number', title: function () {
+                        return '<label>编号</label>';
+                    }, align: 'center', width: 100
+                },
+                {
+                    field: 'time', title: function () {
+                        return '<label>时间</label>';
+                    }, align: 'center', width: 100
+                },
+                {
+                    field: '_a', title: function () {
+                        return '<label>操作</label>';
+                    }, align: 'center', width: 100,
+                    formatter: function () {
+                        return '<label><button onclick="cz(this)">操作</button></label>'
+                    }
+                }
+            ]]
+        });
+
+        var totalSize = data.sum;
+        //分页
+        $("#pp").pagination({
+            total: totalSize,   //table总数
+            showPageList: false,
+            pageSize: currentPageSize,   //每页显示的记录条数
+            pageNumber: currentPageIndex,  //设置当前页
+            pageList: [5, 10, 15, 20],    //可以设置每页记录条数的列表
+            beforePageText: '第',
+            afterPageText: '页 共{pages}页',
+            displayMsg: '<label>当前显示{from} - {to} 条记录 共{total}条记录 </label>',
+            onSelectPage: function (pageNumber, psize) {
+                currentPageIndex = pageNumber;
+                currentPageSize = psize;
+                table1();
+            },
+            onChangePageSize: function (psize) {
+                currentPageSize:psize;
+            }
+        })
+    }
+
+    //操作
+    function cz(obj) {
+        alert($(obj).html())
+    }
+</script>
+</html>

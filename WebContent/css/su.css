@@ -1,0 +1,326 @@
+button {
+    cursor: pointer;
+}
+
+.home-head {
+    border: 1px solid black;
+    width: 150px;
+}
+
+.btn-tred {
+    background-color: #F88E8B;
+}
+
+.hide1 {
+    width: 150px;
+    background-color: #AAD7FF;
+    border: 1px solid black;
+}
+
+.hide2 {
+    width: 150px;
+    background-color: white;
+    border: 1px solid black;
+    display: none;
+}
+
+.float-L {
+    float: left;
+}
+
+.square50 {
+    height: 50px;
+    width: 50px;
+    background-color: #AAD7FF;
+    border: 1px solid black;
+    margin-top: 3px;
+    display: none;
+}
+
+.echartsDIV {
+    height: 200px;
+    width: 300px;
+}
+
+.echarts-span {
+    color: blue;
+    font-size: 14px;
+    font-weight: 2;
+    float: left;
+}
+
+.pop1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 200px;
+    background: #fff;
+    border: 4px solid #f90;
+    margin: -102px 0 0 -202px;
+    display: none;
+}
+
+.pop-h2 {
+    font-size: 12px;
+    height: 18px;
+    text-align: right;
+    background: #FC0;
+    border-bottom: 3px solid #f90;
+    padding: 5px;
+    cursor: move;
+}
+
+.pop-h2 span {
+    color: #f90;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #f90;
+    padding: 0 2px;
+}
+
+.fadeToggle {
+    width: 90px;
+    height: 50px;
+    background-color: #F88E8B;
+    border: 1px solid black;
+    display: none;
+}
+
+.animate {
+    width: 90px;
+    height: 50px;
+    background-color: #F88E8B;
+    border: 1px solid black;
+    position: absolute;
+}
+
+.animate2 {
+    width: 90px;
+    height: 50px;
+    background-color: blue;
+    color: #fff;
+    border: 1px solid black;
+    position: absolute;
+}
+
+.fixed-div {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+}
+
+.fixed-td {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+
+.hide-init {
+    display: none;
+}
+
+.text-center {
+    vertical-align: middle;
+}
+
+/*��������  */
+.pop-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: #000;
+    filter: alpha(opacity=50); /*͸�� ֧��ie */
+    -moz-opacity: 0.50; /*͸�� ֧��FireFox */
+    opacity: 0.50; /*͸�� ֧����������� */
+}
+
+.ShufflingFigure {
+    height: 200px;
+    width: 300px;
+    float: left;
+}
+
+.ShufflingFigure .carousel, .carousel-inner, .item, img {
+    width: 100%;
+    height: 100%;
+}
+
+.ShufflingFigure .carousel-control {
+    position: absolute;
+}
+
+.gly-left {
+    background: url(./../img/index/aa.png) no-repeat;
+    display: list-item;
+    position: relative;
+    top: 50%;
+    margin-top: -12px;
+    left: 10%;
+}
+
+.gly-right {
+    background: url(./../img/index/bb.png) no-repeat;
+    display: list-item;
+    position: relative;
+    top: 50%;
+    margin-top: -12px;
+    right: 10%;
+}
+
+.drag-body {
+    width: 300px;
+    height: 200px;
+    float: left;
+}
+
+.drag-body ul {
+    width: 100%;
+    height: 100%;
+}
+
+.drag-body li {
+    padding: 5px;
+    height: 33%;
+    width: 25%;
+    float: left;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.dragBody {
+    height: 200px;
+    width: 200px;
+    border: 1px solid red
+}
+
+.colorbtn {
+    width: 20px;
+    height: 20px
+}
+
+.index-circle {
+    display: inline-block;
+    border-radius: 10px;
+    width: 11px;
+    height: 11px;
+    background-color: red;
+}
+
+.index-div2 {
+    margin-top: 60px
+}
+
+.tab-div {
+    width: 500px;
+    height: 300px;
+}
+
+.tab-div #table1 {
+    height: 300px;
+    width: 100%;
+}
+
+.tab-div #pp {
+    height: 50px;
+    width: 100%;
+}
+
+.datagrid-view1 {
+    height: 0 !important;
+}
+
+.datagrid-header-inner {
+    height: 100%
+}
+
+.mouseTop {
+    position: absolute;
+    left: 40px;
+    top: 0;
+    opacity: 1;
+    z-index: 0;
+}
+
+.mouseBot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    z-index: 1;
+}
+
+.mouseT {
+    background: red;
+    width: 100px;
+    height: 100px;
+}
+
+.mouseB {
+    background: blue;
+    width: 100px;
+    height: 100px;
+}
+
+.home-color {
+    height: 40px;
+    width: 100px;
+    margin: 5px;
+    float: left;
+    background: linear-gradient(
+            #D64542 0%, #C1392B 30%,
+            #C4EFF6 30%, #9A12B4 60%,
+            #68C3A2 60%, #03A679 100%
+    );
+}
+
+.home-color1 {
+    height: 40px;
+    width: 100px;
+    margin: 5px;
+    float: left;
+    background: linear-gradient(
+            to right,
+            #D64542 0%, #C1392B 30%,
+            #C4EFF6 30%, #9A12B4 60%,
+            #68C3A2 60%, #03A679 100%
+    );
+}
+
+.home-color2 {
+    height: 40px;
+    width: 100px;
+    margin: 5px;
+    float: left;
+    background: linear-gradient(
+            135deg,
+            #D64542 0%, #C1392B 30%,
+            #C4EFF6 30%, #9A12B4 60%,
+            #68C3A2 60%, #03A679 100%
+    );
+}
+
+.home-color3 {
+    height: 40px;
+    width: 100px;
+    margin: 5px;
+    float: left;
+    background: linear-gradient(
+            35deg,
+            #D64542 0%, #C1392B 30%,
+            #C4EFF6 30%, #9A12B4 60%,
+            #68C3A2 60%, #03A679 100%
+    );
+}
+
+.echart5-div {
+    width: 10px;
+    height: 10px;
+    background: url(./../img/index/bb.png) no-repeat;
+}

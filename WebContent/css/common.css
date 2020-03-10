@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.wid-100 {
+    width: 100%
+}
+
+.wid-50 {
+    width: 50%
+}
+
+.hei-100x {
+    height: 100px
+}
+
+.hig-100 {
+    height: 100%
+}
+
+.hei-50 {
+    height: 50%
+}
+
+.color-red {
+    color: red;
+}
+
+.color-blue {
+    color: blue;
+}
+
+/* 红色input框 */
+.redInput {
+    border: 1px solid red !important;
+}
+
+/* li没有左边的小圆点 */
+.no-circleLi li {
+    list-style-type: none
+}
+
+/* easyui插件动态加载表格  start*/
+.datagrid-view1 {
+    height: 0 !important
+}
+
+/**easyui   start*/
+
+/*分页 start */
+/* .pagination table{    
+	float:left
+}
+.pagination .pagination-info{
+	float:right
+}
+.l-btn-icon{   分页按钮
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    display: inline-block;
+}
+.pagination-first{
+	background:url("../img/table/pagination_icons.png") no-repeat 0 center;
+}
+.pagination-prev{
+	background:url("../img/table/pagination_icons.png") no-repeat -16px center;
+}
+.pagination-next{
+	background:url("../img/table/pagination_icons.png") no-repeat -32px center;
+}
+.pagination-last{
+	background:url("../img/table/pagination_icons.png") no-repeat -48px center;
+}
+.pagination-load{
+	background:url("../img/table/pagination_icons.png") no-repeat -64px center;
+} */
+/*分页 end */
+
+/**easyui   end*/

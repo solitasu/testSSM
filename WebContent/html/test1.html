@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="./../plug-in/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./../plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <script type="text/javascript" src="./../plug-in/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./../plug-in/bootstrap/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        .size-header {
+            position: relative;
+            background-color: #27AE60;
+            color: #fff;
+            text-align: center;
+        }
+
+        .main-naver a {
+            color: #fff;
+        }
+
+        .nav-a1 {
+            border-right: 2px solid #fff;
+        }
+
+        .container .navbar-header {
+            margin-top: 15px;
+            margin-right: 5px;
+        }
+
+        .form-style {
+            width: 500px;
+            margin-top: 10px;
+            padding-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container h1 {
+            font-size: 56px;
+            text-shadow: -5px 5px 0 rgba(0, 0, 0, 0.1); /*阴影*/
+        }
+
+        .size-header .form-group {
+            position: relative;
+        }
+
+        .size-header .fa-search {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #777;
+        }
+
+        .title-ul {
+            position: relative;
+            line-height: 30px;
+        }
+
+        .title-ul a {
+            color: #000;
+        }
+
+        .title-ul img {
+            width: 30px;
+            height: 30px;
+            -webkit-filter: grayscale(1); /* Webkit  变灰*/
+            filter: gray; /* IE6-9 */
+            filter: grayscale(1); /* W3C */
+        }
+
+        .form-lab {
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="size-header">
+    <nav class="naver main-naver">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="nav-a1">BootCDN </a>
+                <a>又拍云</a>
+            </div>
+            <nav class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a>API</a></li>
+                    <li><a>API</a></li>
+                    <li><a>API</a></li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class='col-md-12'>
+                <h1>bootCDN</h1>
+                <p>稳定、快速、免费的前端开源项目 CDN 加速服务<br>
+                    <small>共收录了<strong>2924 </strong> 个前端开源项目</small>
+                </p>
+            </div>
+        </div>
+        <form class="form-style">
+            <div class="form-group">
+                <input class="form-control text-center" placeholder="搜索"/>
+                <i class="fa fa-search"></i>
+            </div>
+        </form>
+    </div>
+    <div class="title-ul well well-sm">
+        <ul class="list-inline">
+            <li><a title="bootstrap"><img alt="bootstrap" src="./../img/test1/bootstrap.svg"></a></li>
+            <li><a title="react"><img alt="react" src="./../img/test1/react.svg"></a></li>
+            <li><a title="jquery"><img alt="jquery" src="./../img/test1/jquery.svg"></a></li>
+            <li><a title="angular-icon"><img alt="angular-icon" src="./../img/test1/angular-icon.svg"></a></li>
+            <li><a title="vue"><img alt="vue" src="./../img/test1/vue.svg"></a></li>
+            <li><a title="backbone-icon"><img alt="backbone-icon" src="./../img/test1/backbone-icon.svg"></a></li>
+            <li><a title="lodash"><img alt="lodash" src="./../img/test1/lodash.svg"></a></li>
+            <li><a title="momentjs"><img alt="momentjs" src="./../img/test1/momentjs.svg"></a></li>
+        </ul>
+    </div>
+</header>
+<div class="row">
+    <div class="col-md-12">
+        <form class="pull-right form-lab">
+            <laber>选择协议：</laber>
+            <div class="btn-group" data-toggle="bottons">
+                <laber class="btn btn-default">https</laber>
+                <laber class="btn btn-default">http</laber>
+                <laber class="btn btn-default">自适应</laber>
+            </div>
+            <span><a>了解详情</a><i class="fa fa-info-circle"></i></span>
+        </form>
+    </div>
+</div>
+</body>
+</html>

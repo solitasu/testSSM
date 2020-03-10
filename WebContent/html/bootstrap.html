@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap页面框架</title>
+
+    <link rel="stylesheet" href="./../plug-in/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./../plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./../css/su.css"/>
+    <link rel="stylesheet" href="./../css/boot.css"/>
+
+    <script type="text/javascript" src="./../plug-in/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./../plug-in/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- .container-fluid 类用于 100% 宽度，占据全部视口（viewport）的容器。 -->
+<div id="boot" class="container-fluid">
+    <!-- 通过“行（row）”在水平方向创建一组“列（column）”。 -->
+    <!-- 如果在一个 .row 内包含的列（column）大于12个，包含多余列（column）的元素将作为一个整体单元被另起一行排列。 -->
+    <div class="row">
+        <div class="col-md-1">aa</div>
+        <div class="col-md-1" style="height:42px">aaaa</div>
+        <div class="col-md-10">aa</div>
+        <div class="col-md-5">aa</div>
+        <div class="col-md-5">aa</div>
+    </div>
+
+    <!-- 列偏移: col-md-offset-2-->
+    <div class="row" style="margin-top:10px">
+        <div><b>列偏移:</b></div>
+        <div class="col-md-3 col-md-offset-2">aa</div>
+        <div class="col-md-2 col-md-offset-3">aa</div>
+    </div>
+
+    <!-- 列嵌套  -->
+    <div class="row" style="margin-top:10px">
+        <div class="col-md-8">
+            <div>
+                <h4>列嵌套:
+                    <small>副标题</small>
+                </h4>
+            </div>
+            <div class="row">
+                <!-- 各种类型的文本  居中-->
+                <div class="col-md-7">
+            <span>aaaaa
+            <span class="lead">突出显示(class="lead")</span>aaaa
+            <p>aaaaa换行(p标签)</p>
+            <mark>aaaa标记(mark标签)</mark>
+            <del>aaaa删除(del标签)</del>
+            <u>aaaa下划线(u标签)</u>
+            <small>aa小号文本(small标签)</small>
+            <strong>aa着重(strong标签)</strong>
+            <em>aa斜体(em标签)</em></p>
+                <p>通过 kbd 标签标记用户通过键盘输入的内容<kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
+            
+            <p><b>改变大小写：</b>
+               <span class="text-lowercase">class="text-lowercase"</span>
+			   <span class="text-uppercase">class="text-uppercase"</span>
+			   <span class="text-capitalize">class="text-capitalize"</p>
+                </p>
+
+
+                <p>缩略语：aaa <abbr title="attribute">attr</abbr> aaaa</p>
+			<p>首字母缩略语：aaa <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> aaaa</p>
+			
+			<blockquote>
+			  <p>引用Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+			  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+			</blockquote>
+			
+			<blockquote class="blockquote-reverse">
+			  <p>引用Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+			  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+			</blockquote>
+                </div>
+                <div class="col-md-4">
+                    <p class="text-center">居中</p>
+                    <span class="text-nowrap">aaaaaa禁止自动换行(class="text-nowrap")</span>
+                </div>
+
+                <!-- 列表 -->
+                <div class="col-md-4">
+                    <ul>
+                        <li>列表1(ul)</li>
+                        <li>aaa
+                            <ul>
+                                <li>aaa</li>
+                                <li>aaa</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ol>
+                        <li>列表2(ol)</li>
+                        <li>aaa</li>
+                        <li>aaa</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-unstyled">
+                        <li>列表3(ul,class="list-unstyled")</li>
+                        <li>aaa
+                            <ul>
+                                <li>aaa</li>
+                                <li>aaa</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline">
+                        <li>列表4(ul,class="list-inline")</li>
+                        <li>aaa</li>
+                        <li>aaa</li>
+                        <li>aaa</li>
+                        <li>aaa</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <dl>
+                        <dt>描述1</dt>
+                        <dd>aaaaaaaaaaa</dd>
+                    </dl>
+                </div>
+                <div class="col-md-4">
+                    <dl class="dl-horizontal">
+                        <dt>描述2</dt>
+                        <dd>aaaaaaaaaaa</dd>
+                        <dt>描述2</dt>
+                        <dd>aaaaaaaaaaa</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="col-md-12">
+                <table class="table">
+                    <tr>
+                        <th>表格1</th>
+                        <th>表格1</th>
+                    </tr>
+                    <tr>
+                        <td>aaa</td>
+                        <td>aaa</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <tr>
+                        <th>表格2(斑马线)</th>
+                        <th>表格2</th>
+                    </tr>
+                    <tr>
+                        <td>aaa</td>
+                        <td>aaa</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>表格3(带边框)</th>
+                        <th>表格3</th>
+                    </tr>
+                    <tr>
+                        <td>aaa</td>
+                        <td>aaa</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <tr>
+                        <th>表格4(鼠标悬停)</th>
+                        <th>表格4</th>
+                    </tr>
+                    <tr>
+                        <td>aaa</td>
+                        <td>aaa</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-condensed">
+                    <tr>
+                        <th>表格5</th>
+                        <th>表格5</th>
+                    </tr>
+                    <tr class="active">
+                        <td>aaa</td>
+                        <td>aaa</td>
+                    </tr>
+                    <tr class="success">
+                        <td>aaa</td>
+                        <td>aaa</td>
+                    </tr>
+                    <tr class="warning">
+                        <td>aaa</td>
+                        <td>aaa</td>
+                    </tr>
+                    <tr class="danger">
+                        <td>aaa</td>
+                        <td>aaa</td>
+                    </tr>
+                    <tr class="info">
+                        <td>aaa</td>
+                        <td>aaa</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- input框…… -->
+    <!-- 所有设置了 .form-control 类的 <input>、<textarea> 和 <select> 元素都将被默认设置宽度属性为 width: 100%; -->
+    <div class="row">
+        <div class="col-md-4">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Check me out
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-8" style="margin-top:10px">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="exampleInputName2">Name</label>
+                    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                        <div class="input-group-addon">.00</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="disabledInput" type="text" placeholder="禁用disabled" disabled>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <div class="col-md-2">
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess1">绿色</label>
+                    <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
+                    <span id="helpBlock2" class="help-block">sdfskjf</span>
+                </div>
+                <div class="form-group has-warning">
+                    <label class="control-label" for="inputWarning1">黄色</label>
+                    <input type="text" class="form-control" id="inputWarning1">
+                </div>
+                <div class="form-group has-error">
+                    <label class="control-label" for="inputError1">红色</label>
+                    <input type="text" class="form-control" id="inputError1">
+                </div>
+                <div class="has-success">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="checkboxSuccess" value="option1">绿色
+                        </label>
+                    </div>
+                </div>
+                <div class="has-warning">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="checkboxWarning" value="option1">黄色
+                        </label>
+                    </div>
+                </div>
+                <div class="has-error">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="checkboxError" value="option1">红色
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <textarea class="form-control" rows="3"></textarea>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="">1
+                    </label>
+                </div>
+                <div class="checkbox disabled">
+                    <label>
+                        <input type="checkbox" value="" disabled>禁止
+                    </label>
+                </div>
+
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>默认选中checked
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">2
+                    </label>
+                </div>
+                <div class="radio disabled">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>禁止disabled
+                    </label>
+                </div>
+
+                <select class="form-control">
+                    <option>下拉框</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+
+                <input class="form-control" type="text" placeholder="只读readonly" readonly>
+
+                <div class="form-group has-success has-feedback">
+                    <label class="control-label" for="inputGroupSuccess1">自定义图片</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input type="text" class="form-control" id="inputGroupSuccess1"
+                               aria-describedby="inputGroupSuccess1Status">
+                    </div>
+                    <span class="glyphicon true form-control-feedback" aria-hidden="true"></span>
+                    <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+                </div>
+            </div>
+
+
+            <!-- 多选框（checkbox）用于选择列表中的一个或多个选项，而单选框（radio）用于从多个选项中只选择一个。 -->
+            <div class="col-md-2">
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 多选
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label>
+
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 单选
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+                </label>
+
+
+            </div>
+            <!-- 标题  1，2，3…… counter-increment属性 -->
+            <div class="col-md-3">
+                <h5>标题1</h5>
+                <h6>aaa</h6>
+                <h6>aaa</h6>
+                <h5>标题2</h5>
+                <h6>aaa</h6>
+                <h6>aaa</h6>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

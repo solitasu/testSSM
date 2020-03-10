@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>时间</title>
+    <script type="text/javascript" src="./../plug-in/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./../plug-in/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./../plug-in/jquery-easyui-1.5.2/jquery.easyui.min.js"></script>
+    <!--时间控件  -->
+    <script type="text/javascript" src="./../plug-in/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="./../js/common.js"></script>
+
+    <link rel="stylesheet" href="./../plug-in/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./../plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <style type="text/css">
+        p span {
+            color: red
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <span>标准（年-月-日 时:分:秒）：</span>
+            <input type="text"
+                   onfocus="WdatePicker({startDate:'%y-%M-%d',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUserStartData:true,maxDate:'%y-%M-%d'})">
+            <span>标准（年-月-日）：</span>
+            <input id="" type="text" onClick="WdatePicker()"/>
+            <span>时:分:秒</span>
+            <input type="text" id="d242" onclick="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})" class="Wdate"/>
+            <span>年-月</span>
+            <input type="text" id="d243" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy年MM月'})" class="Wdate"/>
+            <span>这一天是第几周：</span>
+            <input type="text" id="dz"
+                   onclick="WdatePicker({isShowWeek:true,onpicked:funccc,errDealMode:3,maxDate:'%y-%M-%d'})"/>
+        </div>
+        <div class="col-md-12">
+            <span>星期, 月 日, 年</span>
+            <input type="text" id="d245" onclick="WdatePicker({dateFmt:'DD, MMMM d, yyyy'})" class="Wdate"/>
+            <span>双月日历</span>
+            <input class="Wdate" type="text" onclick="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd'})"/>
+        </div>
+        <div class="col-md-12">
+            <span> 禁用 周六 周日 所对应的日期</span>
+            <input id="d442" type="text" class="Wdate" onclick="WdatePicker({disabledDays:[0,6]})"/>
+            <span>禁用 每个月份的 5日 15日 25日</span>
+            <input id="d451" type="text" class="Wdate" onclick="WdatePicker({disabledDates:['5$']})"/>
+            <span>只启用 每个月份的 5日 15日 25日</span>
+            <input id="d46" type="text" class="Wdate" onclick="WdatePicker({opposite:true,disabledDates:['5$']})"/>
+        </div>
+        <div class="col-md-12">
+            <span> 高亮每周 周一 周五</span>
+            <input id="d471" type="text" class="Wdate" onclick="WdatePicker({specialDays:[1,5]})"/>
+            <span> 高亮每月 1号 15号</span>
+            <input id="d472" type="text" class="Wdate"
+                   onclick="WdatePicker({specialDates:['....-..-01','....-..-15']})"/>
+        </div>
+        <div class="col-md-12">
+            <!--{M:5,d:7} 表示 五个月零7天
+                {y:1,d:-3} 表示 1年少3天
+                {d:1,H:1} 表示一天多1小时   -->
+            <span>前面的日期+3天 不能大于 后面的日期</span>
+            <input type="text" class="Wdate" id="d4321"
+                   onclick="WdatePicker({maxDate:'#F{$dp.$D(\'d4322\',{d:-3});}'})"/>
+            <input type="text" class="Wdate" id="d4322"
+                   onclick="WdatePicker({minDate:'#F{$dp.$D(\'d4321\',{d:3});}'})"/>
+        </div>
+        <div class="col-md-12">
+            <span>转换为系统可识别的日期格式</span>
+            <input id="d244" type="text" class="Wdate" onclick="WdatePicker({dateFmt:'yyyy年M月d日',vel:'d244_2'})"/>
+            <span>转换结果：</span>
+            <input id="d244_2" type="text"/>
+        </div>
+        <div class="col-md-12">
+            <span>点击时间按钮选择时间： </span>
+            <input id="d12" type="text"/><img onclick="WdatePicker({el:'d12'})"
+                                              src="../plug-in/My97DatePicker/skin/datePicker.gif" width="16" height="22"
+                                              align="absmiddle">
+            <span>自定义弹窗出现位置： </span>
+            <input class="Wdate" type="text" id="d16" onclick="WdatePicker({position:{left:100,top:50}})"/>
+            <!-- 年月日时分秒都有对应的changing和changed事件,分别是:
+                ychanging ychanged
+                Mchanging Mchanged
+                dchanging dchanged
+                Hchanging Hchanged
+                mchanging mchanged
+                schanging schanged  -->
+            <span> 年月日改变时弹出信息</span>
+            <input type="text" class="Wdate"
+                   onclick="WdatePicker({dchanging:cDayFunc, Mchanging:cMonthFunc, ychanging:cYearFunc, dchanged:cDayFunc, Mchanged:cMonthFunc, ychanged:cYearFunc})"/>
+        </div>
+        <div class="col-md-12">
+            <span>以星期一作为第一天： </span>
+            <input class="Wdate" type="text" id="d17" onclick="WdatePicker({firstDayOfWeek:1})"/>
+            <span>在span中显示日期(日期根据初始值自动调整)：</span>
+            <span id="demospan">2011-01-01</span>
+            <img onClick="WdatePicker({el:'demospan'})" src="../plug-in/My97DatePicker//skin/datePicker.gif" width="16"
+                 height="22" align="absmiddle" style="cursor:pointer"/>
+        </div>
+        <div class="col-md-12">
+            <span>在div中显示日期：</span>
+            <div id="div1"></div>
+        </div>
+        <div class="col-md-12">
+
+        </div>
+        <div class="col-md-12">
+
+        </div>
+        <div class="col-md-12">
+
+        </div>
+        <div class="col-md-12">
+            <p>设置highLineWeekDay属性 ture 或 false 可指定是否<span>高亮周末</span> 。 如：onclick="WdatePicker({highLineWeekDay:true})"
+            </p>
+            <p>设置readOnly属性 true 或 false 可指定日期框是否<span>只读</span></p>
+            <p>是否显示<span>清空按钮</span>和<span>今天按钮</span>,可以根据需要进行自定义,它们分别对应 isShowClear 和 isShowToday 默认值都是true</p>
+            <p>设置日期<span>起始值</span>、 <span>固定值</span>
+            <p>1.当日期框为空值时固定起始值 如： onclick="WdatePicker({startDate:'1980-05-01'})"</p>
+            <p>2.当日期框无论是何值,始终使用 1980-05-01 做为起始日期 如：
+                onclick="WdatePicker({startDate:'1980-05-01',alwaysUseStartDate:true})"</p>
+            </p>
+            <p>设置<span>动态参数</span> 如：onclick="WdatePicker({startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd
+                HH:mm:ss',alwaysUseStartDate:true})"/</p>
+            <p>yMdHmswW分别代表年月日时分秒星期周,你可以任意组合这些元素来<span>自定义</span>你个性化的<span>日期格式</span>. </p>
+            <p><span>自动纠错</span>0 提示(默认) 1 自动纠错 2 标记 -1 禁用自动纠错 如：onclick="WdatePicker({errDealMode:1})"</p>
+            <p><span>最大可选择时间</span> 如：maxDate:'%y-%M-%d' 或 maxDate:'2017-05-01'</p>
+            <p><span>多语言</span> 繁体中文：onclick="WdatePicker({lang:'zh-tw'})" 英文：lang:'en' 简体中文：lang:'zh-cn'
+                根据浏览器的语言自动选择语言：lang='auto'
+            </p>
+            <p>设置日期<span>最大、最小值</span> 如： onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd
+                HH:mm:ss',minDate:'2008-03-08 11:30:00',maxDate:'2008-03-10 20:59:30'})" value="2008-03-09 11:00:00"</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <div class="col-md-12">
+            <img alt="时间格式表" src="../img/time/timeType.png">
+            <img alt="动态变量表" src="../img/time/dtblb.png">
+        </div>
+
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    })
+
+    //周
+    function funccc() {
+        var id = $($dp.el).attr("id");
+        $("#" + id).val($dp.cal.getP("y") + "年第" + $dp.cal.getP("W", "WW") + "周");
+    }
+
+    //将日期显示在id为div1的div中
+    WdatePicker({
+        eCont: 'div1',
+        dateFmt: 'yyyy-MM-dd HH:mm:ss',
+        onpicked: function (dp) {
+            alert('你选择的日期是:' + dp.cal.getDateStr() + '   年:' + dp.cal.getP('y') + '   月:' + dp.cal.getP('M') + '   日:' + dp.cal.getP('d')
+                + '   时:' + dp.cal.getP('H') + '   分:' + dp.cal.getP('m') + '   秒:' + dp.cal.getP('s') + '   星期(1……6):' + dp.cal.getP('w')
+                + '   周:' + dp.cal.getP('W') + '   星期(一……六):' + dp.cal.getP('D'))
+        }
+    })
+
+    //年月日改变时弹出信息
+    function cDayFunc() {
+        cFunc('d');
+    }
+
+    function cMonthFunc() {
+        cFunc('M');
+    }
+
+    function cYearFunc() {
+        cFunc('y');
+    }
+
+    function cFunc(who) {
+        var str, p, c = $dp.cal;
+        if (who == 'y') {
+            str = '年份';
+            p = 'y';
+        }
+        else if (who == 'M') {
+            str = '月份';
+            p = 'M';
+        }
+        else if (who == 'd') {
+            str = '日期';
+            p = 'd';
+        }
+        alert(str + '发生改变了!\n$dp.cal.date.' + p + '=' + c.date[p] + '\n$dp.cal.newdate.' + p + '=' + c.newdate[p]);
+    }
+</script>
+</html>

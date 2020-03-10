@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 为了确保移动设备适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。 -->
+    <!--content属性值：
+           width:可视区域的宽度，值可为数字或关键词device-width
+           intial-scale:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放
+           maximum-scale=1.0, minimum-scale=1.0;可视区域的缩放级别， maximum-scale用户可将页面放大的程序，1.0将禁止用户放大到实际尺寸之上。
+           user-scalable:是否可对页面进行缩放，no 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主页</title>
+    <script type="text/javascript" src="./../plug-in/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./../plug-in/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./../plug-in/jquery-easyui-1.5.2/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="./../js/common.js"></script>
+
+    <link rel="stylesheet" href="./../plug-in/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./../plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./../css/common.css"/>
+</head>
+<body>
+<div class="wid-100 hig-100">
+    <div class="row hig-100">
+        <div class="col-md-12 hig-100">
+            <div class="col-md-2 hig-100 no-circleLi">
+                <ul>
+                    <li>
+                        <a href="../html/index.html" target="iframe_home">主页</a>
+                    </li>
+                    <li>
+                        <a href="../html/bootstrap.html" target="iframe_home">bootstrap</a>
+                    </li>
+                    <li>
+                        <a href="../html/echarts.html" target="iframe_home">echarts</a>
+                    </li>
+                    <li>
+                        <a href="../html/time.html" target="iframe_home">时间10<sub>5</sub></a>
+                    </li>
+                    <li>
+                        <a href="../html/table.html" target="iframe_home">表格</a>
+                    </li>
+                    <li>
+                        <a href="../html/text.html" target="iframe_home">文字</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-10 hig-100">
+                <iframe id="iframe_home" name="iframe_home" src="../html/index.html" class="hig-100 wid-100"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

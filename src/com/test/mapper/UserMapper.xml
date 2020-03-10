@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.mapper.UserMapper">
+    <resultMap type="com.test.model.TestModel" id="UserMap">
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="number" property="number" jdbcType="VARCHAR"/>
+        <result column="time" property="time" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <select id="getUserInfo" resultType="String">
+        SELECT user_name FROM `user_t` WHERE age="24"
+    </select>
+    <!-- 表格页面分页数据 -->
+    <select id="getTableData" resultMap="UserMap">
+        select * from table_test where time='${map.time}' limit ${map.pageno},${map.pagesize}
+    </select>
+    <!-- 表格页面数据总和 -->
+    <select id="getTableSum" resultType="int">
+        select count(1) from table_test where time='${map.time}'
+    </select>
+
+</mapper>

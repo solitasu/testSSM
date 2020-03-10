@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.mapper.DatabaseMapper">
+    <resultMap type="com.test.model.TestModel" id="UserMap">
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="number" property="number" jdbcType="VARCHAR"/>
+        <result column="time" property="time" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="getInDatabase" parameterType="map">
+
+        INSERT INTO user_t(user_name,password,age) VALUE('${map.username}','${map.password}','${map.age}')
+
+    </insert>
+
+    <select id="getAcquireData" resultType="String">
+        SELECT user_name FROM `user_t` WHERE age="24"
+    </select>
+
+    <select id="getselectData" resultMap="UserMap">
+        SELECT
+        *
+        FROM
+        table_test
+        <!-- <if test="name != '' && name != null">
+            WHERE
+            name LIKE "%{name}%";
+        </if> -->
+    </select>
+
+</mapper>
